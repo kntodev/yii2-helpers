@@ -1,0 +1,30 @@
+{
+    "name": "kntodev/yii2-simplemessage",
+    "description": "Simple Message Module for Yii2",
+    "type": "yii2-extension",
+    "keywords": ["yii2","helpers"],
+    "license": "GPL-3.0+",
+    "authors": [
+        {
+            "name": "Knut Bayha",
+            "email": "test@msn.com",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "yiisoft/yii2": "~2.0.0",
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "kntodev\\helpers\\": ""
+        }
+    },
+    "repositories":[
+        {
+            "type": "git",
+            "url": "https://github.com/kntodev/yii2-helpers"
+        }
+    ]
+}
