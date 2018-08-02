@@ -1,5 +1,5 @@
 {
-    "name": "kntodev/yii2-simplemessage",
+    "name": "kntodev/yii2-helpers",
     "description": "Simple Message Module for Yii2",
     "type": "yii2-extension",
     "keywords": ["yii2","helpers"],
