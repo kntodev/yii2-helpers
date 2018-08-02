@@ -6,16 +6,19 @@ use Yii;
 use yii\base\Component;
 //use yii\web\Controller;
 use yii\base\InvalidConfigException;
+use kntodev\helpers\HelperAsset;
  
 class Adminltehelper extends Component
 {
 	public function getsidebaruser()
 	{
 		$name = Yii::$app->user->identity->profile->name ;
+		$view = $this->getView();
+		$asset = HelperAsset::register($view);
 
-		$avatar = 'images/avatars/user.png';
+		$avatar = $asset->baseUrl . '/images/avatars/user.png';
 		if (!Yii::$app->user->isGuest && Yii::$app->user->identity->isAdmin) {
-			$avatar = 'images/avatars/admin.jpg';
+			$avatar = $asset->baseUrl . '/images/avatars/admin.jpg';
 		}
 		if (Yii::$app->user->identity->profile->gravatar_id) {
 			$avatar = 'https://www.gravatar.com/avatar/'.Yii::$app->user->identity->profile->gravatar_id.'?s=160' ;
@@ -30,16 +33,18 @@ class Adminltehelper extends Component
 	public function getnavbaruser()
 	{
 		$name = Yii::$app->user->identity->profile->name ;
+		$view = $this->getView();
+		$asset = HelperAsset::register($view);
 
 		Yii::$app->formatter->locale = 'de-DE';
 		$created_at = Yii::$app->formatter->asDate(Yii::$app->user->identity->created_at, 'php:j.F.Y');
 
-		$avatar1 = 'images/avatars/user_small.png';
-		$avatar2 = 'images/avatars/user_medium.png';
+		$avatar1 = $asset->baseUrl . '/images/avatars/user_small.png';
+		$avatar2 = $asset->baseUrl . '/images/avatars/user_medium.png';
 		$role = 'Mitglied' ;
 		if (!Yii::$app->user->isGuest && Yii::$app->user->identity->isAdmin) {
-			$avatar1 = 'images/avatars/admin_small.jpg';
-			$avatar2 = 'images/avatars/admin_medium.jpg';
+			$avatar1 = $asset->baseUrl . '/images/avatars/admin_small.jpg';
+			$avatar2 = $asset->baseUrl . '/images/avatars/admin_medium.jpg';
 			$role = 'Admin' ;
 		}
 

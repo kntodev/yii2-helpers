@@ -6,8 +6,9 @@ use yii\web\AssetBundle;
 
 class HelpersAsset extends AssetBundle
 {
-    public $basePath = '@webroot';
-    public $baseUrl = '@web';
+	public $sourcePath = __DIR__.'/assets'
+//    public $basePath = '@kntodev/helpers/assets';
+//    public $baseUrl = '@web';
     public $css = [
     ];
     public $js = [
