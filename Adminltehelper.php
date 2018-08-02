@@ -6,15 +6,15 @@ use Yii;
 use yii\base\Component;
 //use yii\web\Controller;
 use yii\base\InvalidConfigException;
-use kntodev\helpers\HelperAsset;
+use kntodev\helpers\HelpersAsset;
  
 class Adminltehelper extends Component
 {
 	public function getsidebaruser()
 	{
 		$name = Yii::$app->user->identity->profile->name ;
-		$view = $this->getView();
-		$asset = HelperAsset::register($view);
+		$view = Yii::$app->view;
+		$asset = HelpersAsset::register($view);
 
 		$avatar = $asset->baseUrl . '/images/avatars/user.png';
 		if (!Yii::$app->user->isGuest && Yii::$app->user->identity->isAdmin) {
@@ -33,8 +33,8 @@ class Adminltehelper extends Component
 	public function getnavbaruser()
 	{
 		$name = Yii::$app->user->identity->profile->name ;
-		$view = $this->getView();
-		$asset = HelperAsset::register($view);
+		$view = Yii::$app->view;
+		$asset = HelpersAsset::register($view);
 
 		Yii::$app->formatter->locale = 'de-DE';
 		$created_at = Yii::$app->formatter->asDate(Yii::$app->user->identity->created_at, 'php:j.F.Y');

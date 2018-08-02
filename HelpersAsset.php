@@ -6,7 +6,7 @@ use yii\web\AssetBundle;
 
 class HelpersAsset extends AssetBundle
 {
-	public $sourcePath = __DIR__.'/assets'
+	public $sourcePath = __DIR__.'/assets';
 //    public $basePath = '@kntodev/helpers/assets';
 //    public $baseUrl = '@web';
     public $css = [
@@ -16,5 +16,6 @@ class HelpersAsset extends AssetBundle
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
+        'dmstr\web\AdminLteAsset',
     ];
 }
