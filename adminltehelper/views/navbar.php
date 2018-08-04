@@ -33,7 +33,7 @@ use yii\helpers\Url;
         <!-- Menu Footer-->
         <li class="user-footer">
             <div class="pull-left">
-                <a href="http://develop.duebeck-it.eu//user/settings/profile" class="btn btn-default btn-flat"><?= Yii::t('app', 'Profile') ?></a>
+                <a href="/user/settings/profile" class="btn btn-default btn-flat"><?= Yii::t('app', 'Profile') ?></a>
             </div>
             <div class="pull-right">
                 <?= Html::a(
